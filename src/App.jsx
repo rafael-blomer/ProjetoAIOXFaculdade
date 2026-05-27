@@ -29,30 +29,40 @@ function App() {
       : text.split("\n").length;
 
   return (
-    <div className="container">
-      <h1>Contador de Texto</h1>
+    <div className="app">
+      <div className="container">
+        <h1>Contador de Texto</h1>
 
-      <textarea
-        placeholder="Digite seu texto aqui..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+        <p className="subtitle">
+          Ferramenta simples para contar caracteres, palavras e linhas.
+        </p>
 
-      <div className="cards">
-        <div className="card">
-          <h2>Caracteres</h2>
-          <p>{characters}</p>
+        <textarea
+          placeholder="Digite seu texto aqui..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+
+        <div className="stats">
+          <div className="card">
+            <h2>Caracteres</h2>
+            <span>{characters}</span>
+          </div>
+
+          <div className="card">
+            <h2>Palavras</h2>
+            <span>{words}</span>
+          </div>
+
+          <div className="card">
+            <h2>Linhas</h2>
+            <span>{lines}</span>
+          </div>
         </div>
 
-        <div className="card">
-          <h2>Palavras</h2>
-          <p>{words}</p>
-        </div>
-
-        <div className="card">
-          <h2>Linhas</h2>
-          <p>{lines}</p>
-        </div>
+        <footer>
+          Texto salvo automaticamente no navegador com localStorage
+        </footer>
       </div>
     </div>
   );
